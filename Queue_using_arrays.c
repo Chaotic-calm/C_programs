@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define MAX 50
  
 void insert();
@@ -7,7 +8,8 @@ void display();
 int queue_array[MAX];
 int rear = - 1;
 int front = - 1;
-main()
+
+int main() 
 {
     int choice;
     while (1)
@@ -35,6 +37,7 @@ main()
             printf("Wrong choice \n");
         } 
     } 
+    return 0; 
 } 
  
 void insert()
@@ -47,7 +50,7 @@ void insert()
         if (front == - 1)
         /*If queue is initially empty */
         front = 0;
-        printf("Inset the element in queue : ");
+        printf("Insert the element in queue : ");
         scanf("%d", &add_item);
         rear = rear + 1;
         queue_array[rear] = add_item;
@@ -64,7 +67,7 @@ void delete()
     else
     {
         printf("Element deleted from queue is : %d\n", queue_array[front]);
-        front = front + 1;
+        front = front + 1; // frint element will be removed and front will point to next 
     }
 } 
  
@@ -80,4 +83,4 @@ void display()
             printf("%d ", queue_array[i]);
         printf("\n");
     }
-} 
+ }
